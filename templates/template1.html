@@ -8,23 +8,26 @@
     <h1>Bienvenido!</h1>
     <h3>En esta página observarás el listado de familiares:</h3>
     <hr>
-    <h3>Madre:</h3>
-    ---> Nombre: <b>{{ Madre.nombre }}</b> <br>
-    ---> Apellido: <b>{{ Madre.apellido }}</b> <br>
-    ---> Fecha Nacimiento: <b>{{ Madre.fecha_nacimiento }}</b> <br>
-    ---> Cédula: <b>{{ Madre.cedula }}</b> <br>
-<hr>
-    <h3>Padre:</h3>
-    ---> Nombre: <b>{{ Padre.nombre }}</b> <br>
-    ---> Apellido: <b>{{ Padre.apellido }}</b> <br>
-    ---> Fecha Nacimiento: <b>{{ Padre.fecha_nacimiento }}</b> <br>
-    ---> Cédula: <b>{{ Padre.relacion.cedula }}</b> <br>
-<hr>
-    <h3>Hermana:</h3>
-    ---> Nombre: <b>{{ Hermana.nombre }}</b> <br>
-    ---> Apellido: <b>{{ Hermana.apellido }}</b> <br>
-    ---> Fecha Nacimiento: <b>{{ Hermana.fecha_nacimiento }}</b> <br>
-    ---> Cédula: <b>{{ Hermana.cedula }}</b> <br>
-
+    Estos son 'for' de prueba... <br>
+    Prueba 1:<br>
+        {% for key in informacion %}
+            <li>{{ key }}</li>
+        {% endfor %}<br>
+    Prueba 2:<br>
+        {% for key, value in informacion.items %}
+            <li>{{key}} - {{value}}</li>
+        {% endfor %}<br>
+    Prueba 3:<br>
+        {% for value in informacion.values %}
+            <li>{{value}}</li>
+        {% endfor %}<br>
+    <hr>
+        {% for pariente in informacion %}
+            ---> Nombre: <b>{{ pariente.nombre }}</b> <br>
+            ---> Apellido: <b>{{ pariente.apellido }}</b> <br>
+            ---> Fecha Nacimiento: <b>{{ pariente.fecha_nacimiento }}</b> <br>
+            ---> Cédula: <b>{{ pariente.cedula }}</b> <br>
+            <hr>
+        {% endfor %}<br>
 </body>
 </html>
