@@ -21,9 +21,9 @@ def crear_familiares(request):
     familiar3.save()
 
     informacion = {
-        'Madre': familiar1,
-        'Padre': familiar2,
-        'Hermana': familiar3
+        'Madre': 'familiar1',
+        'Padre': 'familiar2',
+        'Hermana': 'familiar3'
     }
 
     plantilla = loader.get_template('template1.html')

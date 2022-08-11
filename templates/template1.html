@@ -5,11 +5,14 @@
     <title>Title</title>
 </head>
 <body>
+{% load familiares_filtro %}
     <h1>Bienvenido!</h1>
     <h3>En esta página observarás el listado de familiares:</h3>
     <hr>
     Estos son 'for' de prueba... <br>
     Prueba 1:<br>
+        {{ informacion|lookup:'Madre'}}
+
         {% for key in informacion %}
             <li>{{ key }}</li>
         {% endfor %}<br>
