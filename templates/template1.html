@@ -8,21 +8,8 @@
     <h1>Bienvenido!</h1>
     <h3>En esta página observarás el listado de familiares:</h3>
     <hr>
-    Estos son 'for' de prueba... <br>
-    Prueba 1:<br>
-        {% for key in informacion %}
-            <li>{{ key }}</li>
-        {% endfor %}<br>
-    Prueba 2:<br>
-        {% for key, value in informacion.items %}
-            <li>{{key}} - {{value}}</li>
-        {% endfor %}<br>
-    Prueba 3:<br>
-        {% for value in informacion.values %}
-            <li>{{value}}</li>
-        {% endfor %}<br>
-    <hr>
-        {% for pariente in informacion %}
+        {% for pariente in informacion.values %}
+            <h3>{{ pariente.relacion }}</h3>
             ---> Nombre: <b>{{ pariente.nombre }}</b> <br>
             ---> Apellido: <b>{{ pariente.apellido }}</b> <br>
             ---> Fecha Nacimiento: <b>{{ pariente.fecha_nacimiento }}</b> <br>
