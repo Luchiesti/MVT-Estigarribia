@@ -20,23 +20,14 @@ def crear_familiares(request):
     familiar2.save()
     familiar3.save()
 
-    informacion_familiares = {
-        'Madre': familiar1,
-        'Padre': familiar2,
-        'Hermana': familiar3
+    contexto = {
+        'informacion': {
+            'Madre': familiar1,
+            'Padre': familiar2,
+            'Hermana': familiar3
+        }
     }
-
     plantilla = loader.get_template('template1.html')
-    documento_texto = plantilla.render(informacion_familiares)
+    documento_texto = plantilla.render(contexto)
 
     return HttpResponse(documento_texto)
-
-"""
-{% for key,value in informacion_familiares %}
-        <h3>{{ key }}:</h3>
-        -->Nombre: {{ informacion_familiares[key].nombre }}
-        -->Apellido: {{ informacion_familiares[key].apellido }}
-        -->Fecha Nacimiento: {{ informacion_familiares[key].fecha_nacimiento }}
-        -->Cédula: {{ informacion_familiares[key].cedula }}
-    {% endfor %}
-"""
